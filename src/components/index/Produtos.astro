@@ -1,0 +1,52 @@
+---
+import { getBaserowData } from "../../lib/baserow";
+
+const categories_id = 509899;
+const produtos_id = 509890
+
+const categorias = await getBaserowData(categories_id);
+const produtos = await getBaserowData(produtos_id);
+---
+
+{
+    categorias.map((categoria: any) => 
+    <section>
+        <div class="title">
+            <div>
+                <h2>Sabores do interior</h2>
+                <p>Sabores que contam histórias</p>
+            </div>
+            <a href="#">Ver todos os produtos</a>    
+        </div>
+        <div class="list">
+            {
+                produtos
+                .filter((produto: any) => produto.category.value == 'Temperos')
+                .slice(0, 5)
+                .map((produto: any) =>
+                    <div>
+                        <img src={produto.Image_File[0].url} alt="" srcset=""/>
+                        <h3>{produto.name}</h3>
+                    </div>
+                )
+            }
+        </div>
+    </section>
+    )
+}    
+
+<style>
+    .title {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .list {
+        display: flex;
+        gap: 1rem;
+    }
+
+    img {
+        width: 10rem;
+    }
+</style>

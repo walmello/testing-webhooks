@@ -1,0 +1,34 @@
+---
+import Image from "astro/components/Image.astro"
+import logo from "../assets/sabor-logo.webp"
+import Search from "../components/Search.astro"
+---
+
+<div>
+    <Image src={logo} alt="logo"/>
+    <ul>
+        <li><a href="#">Produtos</a></li>
+        <li><a href="#">Marcas</a></li>
+        <li><a href="#">Sobre Nós</a></li>
+    </ul>
+    <Search/>
+</div>
+
+<style>
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+
+        * {
+            padding: 0.2rem;
+        }
+    }
+
+
+</style>

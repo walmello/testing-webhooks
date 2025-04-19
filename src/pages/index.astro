@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from "../components/index/Hero.astro";
+import Produtos from '../components/index/Produtos.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<div class="container">
+		<Header />
+		<Hero/>
+		<Produtos/>	
+	</div>
+</Layout>
+
+
+<style>
+	div {
+		max-width: 80vw;
+		margin: 0 auto;
+	}
+</style>

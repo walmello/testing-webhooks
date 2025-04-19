@@ -1,0 +1,34 @@
+---
+import Search from "../Search.astro"
+import Banner from "../index/Banner.astro"
+---
+
+<section>
+    <Banner/>
+    <div>
+        <p>Desde 1985</p>
+        <h1>Temperando a vida com Sabor</h1>
+    
+        <p>
+            Temos os melhores produtos para as suas receitas, variedades, utlidades e os produtos certos para voce e seu pet.
+        </p>    
+        <Search/>
+    </div>
+</section>
+
+<style>
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        min-height: 80vh;
+        gap: 5rem;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>

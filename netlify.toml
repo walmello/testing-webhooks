@@ -5,11 +5,6 @@
 [build.environment]
   NODE_VERSION = "18"
 
-[build.processing]
-  skip_install = true  # << Esse aqui diz ao Netlify pra não rodar "npm install"
-
-[[plugins]]
-  package = "@netlify/plugin-cache"
-
-  [plugins.inputs]
-    paths = ["node_modules", ".cache", "package-lock.json"]
+# Este comando evita reinstalação se já houver node_modules
+[context.production.environment]
+  NPM_FLAGS = "--prefer-offline --no-audit"
